@@ -1,0 +1,254 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-08 18:19+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apartments\form.py:13 .\apartments\templates\apartments\all_orders.html:46
+#: .\apartments\templates\apartments\checkout.html:42
+#: .\emails\templates\emails\customer_order_notification.html:16
+msgid "Entrada"
+msgstr "Check in"
+
+#: .\apartments\form.py:15 .\apartments\templates\apartments\all_orders.html:47
+#: .\apartments\templates\apartments\checkout.html:43
+#: .\emails\templates\emails\customer_order_notification.html:17
+msgid "Salida"
+msgstr "Check out"
+
+#: .\apartments\form.py:34
+msgid "Nombre"
+msgstr "First name"
+
+#: .\apartments\form.py:36
+msgid "Apellidos"
+msgstr "Last name"
+
+#: .\apartments\form.py:38
+#: .\emails\templates\emails\customer_order_notification.html:13
+msgid "Teléfono"
+msgstr "Phone"
+
+#: .\apartments\form.py:44
+msgid "Comentario"
+msgstr "Comments"
+
+#: .\apartments\form.py:48 .\apartments\form.py:64
+msgid "Usuario"
+msgstr "User"
+
+#: .\apartments\form.py:52 .\apartments\form.py:66
+msgid "Contraseña"
+msgstr "Passwort"
+
+#: .\apartments\form.py:54
+msgid "Rep. contraseña"
+msgstr "Repeat Passwort"
+
+#: .\apartments\templates\apartments\all_orders.html:6
+msgid "Sus Reservas"
+msgstr "Your booked"
+
+#: .\apartments\templates\apartments\all_orders.html:19
+msgid "No tiene reservas"
+msgstr "No reservation"
+
+#: .\apartments\templates\apartments\all_orders.html:35
+msgid "Cancelar reserva"
+msgstr "Cancel reservation"
+
+#: .\apartments\templates\apartments\all_orders.html:36
+msgid "Reserva Nueva"
+msgstr "New Booking"
+
+#: .\apartments\templates\apartments\all_orders.html:39
+#: .\emails\templates\emails\customer_order_notification.html:14
+msgid "Apartamento"
+msgstr "Apartment"
+
+#: .\apartments\templates\apartments\all_orders.html:45
+#: .\apartments\templates\apartments\checkout.html:41
+#: .\emails\templates\emails\customer_order_notification.html:15
+msgid "Noches"
+msgstr "Night"
+
+#: .\apartments\templates\apartments\all_orders.html:48
+#: .\apartments\templates\apartments\checkout.html:44
+#: .\emails\templates\emails\customer_order_notification.html:18
+msgid "Por noche"
+msgstr "Per night"
+
+#: .\apartments\templates\apartments\all_orders.html:49
+#: .\apartments\templates\apartments\checkout.html:45
+#: .\emails\templates\emails\customer_order_notification.html:19
+msgid "Limpieza"
+msgstr "Cleaning"
+
+#: .\apartments\templates\apartments\all_orders.html:53
+#: .\apartments\templates\apartments\checkout.html:49
+msgid "Precio total"
+msgstr "Total price"
+
+#: .\apartments\templates\apartments\apart_detal.html:56
+#: .\apartments\templates\apartments\checkout.html:24
+#: .\apartments\templates\apartments\checkout.html:28
+msgid "Reservar"
+msgstr "Book"
+
+#: .\apartments\templates\apartments\apart_detal.html:58
+msgid "Solo usuario registrado puede reservar"
+msgstr "Only registered user can book"
+
+#: .\apartments\templates\apartments\apart_detal.html:63
+#: .\apartments\templates\apartments\index.html:18
+msgid "Adultos"
+msgstr "Adult"
+
+#: .\apartments\templates\apartments\apart_detal.html:65
+#: .\apartments\templates\apartments\index.html:20
+msgid "Niños"
+msgstr "Child"
+
+#: .\apartments\templates\apartments\apart_detal.html:67
+#: .\apartments\templates\apartments\index.html:22
+msgid "Dormitorio"
+msgstr "Bedroom"
+
+#: .\apartments\templates\apartments\apart_detal.html:68
+#: .\apartments\templates\apartments\index.html:23
+msgid "Max. Huéspedes"
+msgstr "Max. Guests"
+
+#: .\apartments\templates\apartments\apart_detal.html:70
+#: .\apartments\templates\apartments\index.html:25
+msgid "Cama normal"
+msgstr "Beds"
+
+#: .\apartments\templates\apartments\apart_detal.html:73
+#: .\apartments\templates\apartments\index.html:28
+msgid "Cama doble"
+msgstr "Double bed"
+
+#: .\apartments\templates\apartments\apart_detal.html:76
+#: .\apartments\templates\apartments\index.html:31
+msgid "Gratis"
+msgstr "Free"
+
+#: .\apartments\templates\apartments\apart_detal.html:79
+msgid "Por más de 30 días"
+msgstr "For more than 30 days"
+
+#: .\apartments\templates\apartments\apart_detal.html:80
+#: .\apartments\templates\apartments\apart_detal.html:83
+#: .\apartments\templates\apartments\apart_detal.html:86
+msgid "Precio por noche"
+msgstr "Price per night"
+
+#: .\apartments\templates\apartments\apart_detal.html:82
+msgid "Por más de 14 días"
+msgstr "For more than 14 days"
+
+#: .\apartments\templates\apartments\apart_detal.html:85
+msgid "Por menos de 14 días"
+msgstr "For less than 14 days"
+
+#: .\apartments\templates\apartments\apart_detal.html:90
+msgid "Ver detalles"
+msgstr "View details"
+
+#: .\apartments\templates\apartments\apart_detal.html:93
+msgid "Ver en mapa"
+msgstr "View on map"
+
+#: .\apartments\templates\apartments\base.html:31
+msgid "Inicio"
+msgstr "Home"
+
+#: .\apartments\templates\apartments\base.html:52
+msgid "Mis reservas"
+msgstr "My booked"
+
+#: .\apartments\templates\apartments\base.html:53
+msgid "Salir"
+msgstr "Logout"
+
+#: .\apartments\templates\apartments\base.html:55
+#: .\apartments\templates\apartments\register.html:7
+#: .\apartments\templates\apartments\register.html:18
+msgid "Registrarme"
+msgstr "Sign in"
+
+#: .\apartments\templates\apartments\base.html:56
+#: .\apartments\templates\apartments\login.html:20
+msgid "Acceder"
+msgstr "Log in"
+
+#: .\apartments\templates\apartments\base.html:128
+msgid "Reservado"
+msgstr "Booked"
+
+#: .\apartments\templates\apartments\base.html:136
+msgid "es"
+msgstr "en"
+
+#: .\apartments\templates\apartments\checkout.html:28
+msgid "Usted ya tiene una reserva con estatus \"Nueva Reserva\"."
+msgstr "You already have a reservation with status \"New Booking\"."
+
+#: .\apartments\templates\apartments\index.html:34
+msgid "Precio desde"
+msgstr "Price from"
+
+#: .\apartments\templates\apartments\index.html:42
+msgid "Ver disponibilidad"
+msgstr "Check availability"
+
+#: .\canary99\settings.py:123
+msgid "Spanish"
+msgstr "Español"
+
+#: .\canary99\settings.py:124
+msgid "English"
+msgstr "English"
+
+#: .\canary99\settings.py:125
+msgid "German"
+msgstr "Deutsch"
+
+#: .\emails\templates\emails\customer_cancel_reserva.html:8
+msgid "su reserva"
+msgstr "your booking"
+
+#: .\emails\templates\emails\customer_cancel_reserva.html:8
+msgid "cancelada"
+msgstr "cancel"
+
+#: .\emails\templates\emails\customer_order_notification.html:10
+msgid "Su reserva"
+msgstr "Your booking"
+
+#: .\emails\templates\emails\customer_order_notification.html:12
+msgid "Reserva"
+msgstr "Booking"
+
+#: .\emails\templates\emails\customer_order_notification.html:20
+msgid "Precio final"
+msgstr "Final price"
+
+#: .\emails\templates\emails\customer_order_notification.html:21
+msgid "Su mensaje"
+msgstr "Your message"

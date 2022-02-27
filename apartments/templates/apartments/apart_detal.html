@@ -1,0 +1,159 @@
+{% extends 'apartments/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+
+<div class="container py-3">
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+		        <center><h3>{{ message }}</h3></center>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-lable="Close"></button>
+        </div>
+     {% endfor %}
+{% endif %}
+<div class="container-fluid my-carousel">
+		<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000">
+
+			<div class="carousel-inner">
+				<div class="carousel-item active d-flex">
+					<img src="{{ apartment.image.url }}" class="d-block w-100" alt="apartment.title">
+				</div>
+					{% for image in images %}
+				<div class="carousel-item d-flex">
+					<img src="{{ image.image.url }}" class="d-block w-100" alt="...">
+				</div>
+					{% endfor %}
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+	</div>
+
+<h3 class="section-title">{{ apartment.title }}</h3>
+
+		<div class="row">
+
+			<div class="col-md-4 order-md-2">
+			<div class="box-element">
+
+        <form action="" method="POST">
+		    {% csrf_token %}
+		    <div class="form_error-note">{{ form.non_field_errors }}</div>
+        {% for f in form %}
+            <p><label class="product-price" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+        <div class="form-error">{{ f.errors }}</div>
+        {% endfor %}
+        {% if request.user.is_authenticated %}
+		         <button class="btn btn-outline-primary">{% trans 'Reservar' %}</button>
+        {% else %}
+        		<button class="btn btn-outline-primary">{% trans 'Solo usuario registrado puede reservar' %}</button>
+        {% endif %}
+        </form>
+					<hr>
+				<ul class="list-unstyled">
+					<li><span class="product-price"><small><i class="fas fa-user"></i>  {% trans 'Adultos' %}</small>{{ apartment.adultos}}</span></li>
+						{% if apartment.children %}
+						  <li><span class="product-price"><small><i class="fas fa-child"></i>  {% trans 'Niños' %}</small>{{ apartment.children}}</span></li>
+						{% endif %}
+					<li><span class="product-price"><small><i class="fas fa-door-open"></i>  {% trans 'Dormitorio' %}</small>{{ apartment.rooms }}</span></li>
+					<li><span class="product-price"><small><i class="fas fa-user-friends"></i>  {% trans 'Max. Huéspedes' %} </small>{{ apartment.max_person }}</span></li>
+					  {% if apartment.bed %}
+						  <li><span class="product-price"><small><i class="fas fa-bed"></i>  {% trans 'Cama normal' %}</small>{{ apartment.bed}}</span></li>
+						{% endif %}
+						{% if apartment.double_bed %}
+						  <li><span class="product-price"><small><i class="fas fa-bed"></i>  {% trans 'Cama doble' %}</small>{{ apartment.double_bed}}</span></li>
+						{% endif %}
+						{% if apartment.wi_fi %}
+						  <li><span class="product-price"><small><i class="fas fa-wifi"></i>  Wi-Fi</small>{% trans 'Gratis' %}</span></li>
+						{% endif %}
+            <br>
+						<li><span class="product-price">{% trans 'Por más de 30 días' %}:</span>
+						<li><span class="product-price"><small>{% trans 'Precio por noche' %}:</small>  {{ apartment.price.month_price}} €</span></li>
+					  <br>
+						<li><span class="product-price">{% trans 'Por más de 14 días' %}:</span>
+						<li><span class="product-price"><small>{% trans 'Precio por noche' %}:</small>  {{ apartment.price.week_price}} €</span></li>
+            <br>
+						<li><span class="product-price">{% trans 'Por menos de 14 días' %}:</span></li>
+						<li><span class="product-price"><small>{% trans 'Precio por noche' %}:</small>  {{ apartment.price.day_price}} €</span></li>
+
+        <hr>
+				</ul>
+
+            <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#detalModal">
+  {% trans 'Ver detalles' %}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="detalModal" tabindex="-1" aria-labelledby="detalModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="detalModalLabel">{{ apartment.title }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		      {{apartment.description_long|safe}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#mapModal">
+  {% trans 'Ver en mapa' %}
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="mapModal" tabindex="-1" aria-labelledby="mapleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="mapleModalLabel">{{ apartment.title }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+		      {{map|safe}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+			</div>
+			</div>
+
+			<div class="col-md-8 order-md-1">
+			<div class="box-element-map">
+
+
+				<div id="calendar" class="container" style="padding: 20px;"></div>
+
+{% for reserva in reservas %}
+    {{reserva.check_in | date:"Y-m-d"}}
+    {{reserva.check_out | date:"Y-m-d"}}
+{% endfor %}
+			</div>
+
+		</div>
+		</div>
+
+	</div>
+
+<div class="empty"></div>
+
+
+{% endblock %}

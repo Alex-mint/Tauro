@@ -1,0 +1,59 @@
+
+{% extends 'apartments/base.html' %}
+{% load i18n %}
+{% block content %}
+
+{% include 'apartments/inc/slidebar.html' %}
+
+<h1 class="section-title">Checkout</h1>
+<div class="container">
+
+<div class="row">
+		<div class="col-lg-6">
+			<div class="box-element" id="form-wrapper">
+					<form action="" method="POST">
+		{% csrf_token %}
+		<div class="form-error">{{ form.non_field_errors }}</div>
+
+{% for f in form %}
+<p><label class="" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>
+<div class="form-error">{{ f.errors }}</div>
+{% endfor %}
+		<hr>
+		{% if permit %}
+		<button class="btn btn-success btn-block" type="submit">{% trans 'Reservar' %}</button>
+</form>
+		{% else %}
+</form>
+<button class="btn btn-success btn-block">{% trans 'Reservar' %}</button><span class="product-price">{% trans 'Usted ya tiene una reserva con estatus "Nueva Reserva".' %}</span>
+			{% endif %}
+			</div>
+		</div>
+
+		<div class="col-lg-6">
+			<div class="box-element">
+
+				<h3>Apartment {{ reserva.apartment.title }}</h3>
+				<hr>
+
+				<div class="cart-row">
+						<ul class="list-unsty">
+								<li><span class="product-price"><small>  {% trans 'Noches' %}:</small>{{ reserva.amount_nights }}</span></li>
+								<li><span class="product-price"><small>  {% trans 'Entrada' %}:</small>{{ reserva.check_in|date:"d-m-Y" }}</span></li>
+								<li><span class="product-price"><small>  {% trans 'Salida' %}:</small>{{ reserva.check_out|date:"d-m-Y" }}</span></li>
+								<li><span class="product-price"><small>  {% trans 'Por noche' %}:</small>{{ reserva.price_per_night }} €</span></li>
+								<li><span class="product-price"><small>  {% trans 'Limpieza' %}:</small>{{ reserva.cleaning_price }} €</span></li>
+						</ul>
+						<hr>
+						<ul class="list-unsty">
+								<li><span class="product-price"><small>  {% trans 'Precio total' %}:</small>{{ reserva.final_price }} €</span></li>
+						</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="empty"></div>
+
+{% endblock%}
